@@ -1,12 +1,12 @@
 <template>
   <view class="content">
     <image class="logo" src="/static/logo.png"></image>
-    <view class="text-area">
-      <button class="title" @click="handleClick">{{ title }}</button>
+    <view class="">
+      <button class="title" @click="handleClick">跳转到store页</button>
+      <button class="title" @click="handleLogin">跳转到登录页</button>
+      <up-button type="primary" text="Uview-Plus好使"></up-button>
+      <button @click="handleSend">发起请求</button>
     </view>
-    <up-button type="primary" text="确定"></up-button>
-    <uni-badge text="1"></uni-badge>
-    <button @click="handleSend">发起请求</button>
   </view>
 </template>
 
@@ -21,8 +21,13 @@
     onLoad() {},
     methods: {
       handleClick() {
-        uni.switchTab({
+        this.$router.push({
           url: '/pages/store/store',
+        });
+      },
+      handleLogin() {
+        this.$router.push({
+          url: '/pages/login/login',
         });
       },
       handleSend() {

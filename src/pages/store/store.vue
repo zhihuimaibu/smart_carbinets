@@ -6,6 +6,7 @@
       <view class="text-area">
         <text class="title">{{ title }} {{ count }}</text>
         <button @click="handleClick">subpages</button>
+        <button class="title" @click="handleLogin">跳转到登录页</button>
       </view>
     </view>
   </view>
@@ -26,12 +27,17 @@
       }),
     },
     onLoad() {
-      this.$store.counter.increment(); //getter
+      this.$stores.counter.increment(); //getter
     },
     methods: {
       handleClick() {
-        uni.navigateTo({
+        this.$router.push({
           url: '/pagesA/subpage/subpage',
+        });
+      },
+      handleLogin() {
+        this.$router.push({
+          url: '/pages/login/login',
         });
       },
     },

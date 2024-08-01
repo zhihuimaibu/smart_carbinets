@@ -1,6 +1,6 @@
 <template>
   <view class="">
-    login
+    <button @click="handleLogin">登录</button>
   </view>
 </template>
 
@@ -9,12 +9,14 @@
     data() {
       return {
 
-      }
+      };
     },
     methods: {
-
-    }
-  }
+      handleLogin() {
+        this.$stores.user.login();
+      },
+    },
+  };
 </script>
 
 <style>

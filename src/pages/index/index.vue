@@ -6,6 +6,7 @@
       <button class="title" @click="handleLogin">跳转到登录页</button>
       <up-button type="primary" text="Uview-Plus好使"></up-button>
       <button @click="handleSend">发起请求</button>
+      <button @click="handleChooseImage">上传文件</button>
     </view>
   </view>
 </template>
@@ -31,26 +32,29 @@
         });
       },
       handleSend() {
-        uni.request({
-          url: 'http://prexcgzjy.yzxsaas.com/api/zwgrid/v1/user/login',
-          // url: 'https://prescrm.yzxsaas.com/api/sys/v1/user/login',
-          method: 'POST',
-          data: {
-            'phone': '15600089838',
-            'password': '654321',
-          },
-          // data: {
-          //   'userPhone': '18236696587',
-          //   'userPassword': '123456',
-          //   'platformCode': 'ym_scrm',
-          // },
-          header: {
-            'Login-Source': 'xc_pc', //自定义请求头信息
-          },
+        this.$request.post('http://prexcgzjy.yzxsaas.com/api/zwgrid/v1/user/login', {
+          // 'phone': '15610089838',
+          // 'password': '6543218',
+          'phone': '1823669658744',
+          'password': '123456787888',
         }).then(res => {
           console.log('响应值:' + res);
         }).catch(e => {
           console.log('错误码:' + e.status);
+        });
+      },
+      handleChooseImage() {
+        uni.chooseImage({
+          success: (res) => {
+            console.log(res);
+            const tempFilePath = res.tempFilePaths;
+            this.$request.uploadFile('https://prescrm.yzxsaas.com/api/fileUpload/v1/file/upload', tempFilePath[0])
+              .then(resFile => {
+                console.log(resFile);
+              }).catch(e => {
+                console.error(e);
+              });
+          },
         });
       },
     },

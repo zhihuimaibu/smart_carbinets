@@ -37,6 +37,20 @@
       "style": {
         "navigationBarTitleText": "subpage1"
       }
+    },
+    {
+      "path" : "serialPort/serialPort",
+      "style" : 
+      {
+        "navigationBarTitleText" : ""
+      }
+    },
+    {
+      "path" : "sqlite/sqlite",
+      "style" : 
+      {
+        "navigationBarTitleText" : ""
+      }
     }]
   }],
   "tabBar": {

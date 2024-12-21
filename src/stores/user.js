@@ -22,6 +22,15 @@ export const useUserStore = defineStore('user', {
         // url: 'http://prexcgzjy.yzxsaas.com/api/zwgrid/v1/user/login',
         url: 'https://prescrm.yzxsaas.com/api/sys/v1/user/login',
         method: 'POST',
+        // data: {
+        //   'phone': '15600089838',
+        //   'password': '654321',
+        // },
+        data: {
+          'userPhone': '18236696587',
+          'userPassword': '123456',
+          'platformCode': 'ym_scrm',
+        },
         header: {
           'Login-Source': 'xc_pc', //自定义请求头信息
         },

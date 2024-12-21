@@ -32,7 +32,7 @@ requestArr.forEach(method => {
           resolve(data);
         } else if (args.statusCode === 401) {
           unauthorized = true;
-          useUserStore().logOut();
+          useUserStore().logout();
         }
         unauthorized = false;
         reject({

@@ -2,6 +2,7 @@ import { createSSRApp } from 'vue';
 import { piniaPlugin } from '@/stores';
 import { routerPlugin } from '@/router/index.js';
 import { requestPlugin } from '@/request/index.js';
+import '@/usbSerial/index.js';
 import '@/interceptors/router.js';
 import '@/interceptors/request.js';
 import uviewPlus from 'uview-plus';

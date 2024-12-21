@@ -11,7 +11,8 @@ const interceptorMethods = ['navigateTo'];
 uni.addInterceptor('navigateTo', {
   invoke(args) {
     let path = args.url.split('?')[0];
-    if (useUserStore().token) {
+    // if (useUserStore().token) {
+    if (true) {
       if (path === loginPath) {
         return false;
       }
